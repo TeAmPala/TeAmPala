@@ -178,6 +178,200 @@ def rr():
                     qq2.append(i['inn'])
     print(qq2)
 
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+import requests
+a = input('Введите ИНН: ')
+b = input('Введите ИНН: ')
+qq1 = []
+qq2 = []
+qq1.append(a)
+qq2.append(b)
+s1 = []
+s2 = []
+# 6623134596
+# 6623141177
+def qq():
+    for k in range(len(qq1)):
+        query32 = {
+            "inn": qq1[k]
+        }
+        response32 = requests.post('https://dev.vdelo.pro/api/hackaton/kontur-focus/company/details', json=query32)
+        response32 = response32.json()
+        for i in response32['message']['founders']:
+            if 'innfl' in i:
+                s1.append(i['innfl'])
+            elif 'inn' in i:
+                query33 = {
+                    "inn": i['inn']
+                }
+                response33 = requests.post('https://dev.vdelo.pro/api/hackaton/kontur-focus/company/details', json=query33)
+                response33 = response33.json()
+
+                for t in response33['message']['founders']:
+                    if 'innfl' in t:
+                        if t['innfl'] not in s1:
+                            s1.append(t['innfl'])
+
+                for t in response33['message']['foundersH']:
+                    if 'innfl' in t:
+                        if t['innfl'] not in s1:
+                            s1.append(t['innfl'])
+
+                for t in response33['message']['directors']:
+                    if t['innfl'] not in s1:
+                        s1.append(t['innfl'])
+
+                for t in response33['message']['directorsH']:
+                    if t['innfl'] not in s1:
+                        s1.append(t['innfl'])
+
+        for i in response32['message']['foundersH']:
+            if 'innfl' in i:
+                if i['innfl'] not in s1:
+                    s1.append(i['innfl'])
+
+                query34 = {
+                         "inn": i['inn']
+                     }
+                response34 = requests.post('https://dev.vdelo.pro/api/hackaton/kontur-focus/company/details', json=query34)
+                response34 = response34.json()
+                for t in response34['message']['founders']:
+                    if 'innfl' in t:
+                        if t['innfl'] not in s1:
+                            s1.append(t['innfl'])
+
+                for t in response34['message']['foundersH']:
+                    if 'innfl' in t:
+                        if t['innfl'] not in s1:
+                            s1.append(t['innfl'])
+
+                for t in response34['message']['directors']:
+                    if t['innfl'] not in s1:
+                        s1.append(t['innfl'])
+
+                for t in response34['message']['directorsH']:
+                    if t['innfl'] not in s1:
+                        s1.append(t['innfl'])
+
+        for i in response32['message']['directors']:
+            if i['innfl'] not in s1:
+                s1.append(i['innfl'])
+
+        for i in response32['message']['directorsH']:
+            if i['innfl'] not in s1:
+                s1.append(i['innfl'])
+
+def ww():
+    for k in range(len(qq2)):
+        query35 = {
+            "inn": qq2[k]
+        }
+        response35 = requests.post('https://dev.vdelo.pro/api/hackaton/kontur-focus/company/details', json=query35)
+        response35 = response35.json()
+        for i in response35['message']['founders']:
+            if 'innfl' in i:
+                if i['innfl'] not in s2:
+                    s2.append(i['innfl'])
+            elif 'inn' in i:
+                query36 = {
+                    "inn": i['inn']
+                }
+                response36 = requests.post('https://dev.vdelo.pro/api/hackaton/kontur-focus/company/details', json=query36)
+                response36 = response36.json()
+                for t in response36['message']['founders']:
+                    if 'innfl' in t:
+                        if t['innfl'] not in s2:
+                            s2.append(t['innfl'])
+                for t in response36['message']['foundersH']:
+                    if 'innfl' in t:
+                        if t['innfl'] not in s2:
+                            s2.append(t['innfl'])
+
+                for t in response36['message']['directors']:
+                    if t['innfl'] not in s2:
+                        s2.append(t['innfl'])
+                for t in response36['message']['directorsH']:
+                    if t['innfl'] not in s2:
+                        s2.append(t['innfl'])
+
+        for i in response36['message']['foundersH']:
+            if 'innfl' in i:
+                if i['innfl'] not in s2:
+                    s2.append(i['innfl'])
+            elif 'inn' in i:
+                query37 = {
+                    "inn": i['inn']
+                }
+                response37 = requests.post('https://dev.vdelo.pro/api/hackaton/kontur-focus/company/details', json=query37)
+                response37 = response37.json()
+                for t in response37['message']['founders']:
+                    if 'innfl' in t:
+                        if t['innfl'] not in s2:
+                            s2.append(t['innfl'])
+                for t in response37['message']['foundersH']:
+                    if 'innfl' in t:
+                        if t['innfl'] not in s2:
+                            s2.append(t['innfl'])
+                for t in response37['message']['directors']:
+                    if t['innfl'] not in s2:
+                        s2.append(t['innfl'])
+                for t in response37['message']['directorsH']:
+                    if t['innfl'] not in s2:
+                        s2.append(t['innfl'])
+
+        for i in response35['message']['directors']:
+            if i['innfl'] not in s2:
+                s2.append(i['innfl'])
+
+        for i in response35['message']['directorsH']:
+            if i['innfl'] not in s2:
+                s2.append(i['innfl'])
+
+
+def ee():
+    for o in s1:
+        query38 = {
+            "inn": o
+        }
+        response38 = requests.post('https://dev.vdelo.pro/api/hackaton/kontur-focus/person', json=query38)
+        response38 = response38.json()
+        for i in response38['message']['data']:
+            if len(i['inn']) == 12:
+                if i['inn'] not in s1:
+                    s1.append(i['inn'])
+            else:
+                if i['inn'] not in qq1:
+                    qq1.append(i['inn'])
+    print(qq1)
+def rr():
+    for o in s2:
+        query39 = {
+            "inn": o
+        }
+        response39 = requests.post('https://dev.vdelo.pro/api/hackaton/kontur-focus/person', json=query39)
+        response39 = response39.json()
+        for i in response39['message']['data']:
+            if len(i['inn']) == 12:
+                if i['inn'] not in s2:
+                    s2.append(i['inn'])
+            else:
+                if i['inn'] not in qq2:
+                    qq2.append(i['inn'])
+    print(qq2)
+
+
+
+
+
 
 
 
