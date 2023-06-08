@@ -9,7 +9,7 @@ s1 = []
 s2 = []
 # 6623134596
 # 6623141177
-def qq():
+def qq33():
     for k in range(len(qq1)):
         query16 = {
             "inn": qq1[k]
@@ -80,7 +80,7 @@ def qq():
             if i['innfl'] not in s1:
                 s1.append(i['innfl'])
 
-def ww():
+def ww33():
     for k in range(len(qq2)):
         query19 = {
             "inn": qq2[k]
@@ -147,7 +147,7 @@ def ww():
                 s2.append(i['innfl'])
 
 
-def ee():
+def ee33():
     for o in s1:
         query22 = {
             "inn": o
@@ -162,7 +162,7 @@ def ee():
                 if i['inn'] not in qq1:
                     qq1.append(i['inn'])
     print(qq1)
-def rr():
+def rr33():
     for o in s2:
         query23 = {
             "inn": o
@@ -199,7 +199,7 @@ s1 = []
 s2 = []
 # 6623134596
 # 6623141177
-def qq():
+def qq55():
     for k in range(len(qq1)):
         query32 = {
             "inn": qq1[k]
@@ -270,7 +270,7 @@ def qq():
             if i['innfl'] not in s1:
                 s1.append(i['innfl'])
 
-def ww():
+def ww55():
     for k in range(len(qq2)):
         query35 = {
             "inn": qq2[k]
@@ -337,7 +337,7 @@ def ww():
                 s2.append(i['innfl'])
 
 
-def ee():
+def ee55():
     for o in s1:
         query38 = {
             "inn": o
@@ -352,7 +352,7 @@ def ee():
                 if i['inn'] not in qq1:
                     qq1.append(i['inn'])
     print(qq1)
-def rr():
+def rr55():
     for o in s2:
         query39 = {
             "inn": o
